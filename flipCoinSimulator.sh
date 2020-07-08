@@ -34,7 +34,9 @@ echo "Tails count= $tails"
 echo ${singlet[@]}
 
 #calculating the percentage of heads and tails
-headPercent=$(( ($heads/$range) * 100 ))
-	echo "pecentage of heads is: $headPercent"
-tailPercent=$(( (tails/range)*100 ))
-	echo "pecentage of tails is: $tailPercent"
+headPercent=$(($heads*100))
+headPercentage=$(($headPercent/$range))
+echo $headPercentage "%"
+tailPercent=$(($tails*100))
+tailPercentage=$(($tailPercent/$range))
+	echo $tailPercentage "%"
