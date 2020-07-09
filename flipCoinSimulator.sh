@@ -18,7 +18,7 @@ function Percentage()
 	range=$1
 	for keyCount in ${!dictionary[@]}
 	do
-		dictionary[$keyCount]=`echo "scale=4; ${dictionary[$keyCount]}/$range*100" | bc`"%"
+		dictionary[$keyCount]=$((dictionary[$keyCount]*100/$range))
 		echo "Percentage of $keyCount is: ${dictionary[$keyCount]} "
 	done
 }
