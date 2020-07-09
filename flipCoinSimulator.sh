@@ -44,9 +44,9 @@ echo ${singlet[@]}
 echo ${!doublet[@]}
 echo ${doublet[@]}
 #calculating the percentage of heads and tails
-headPercent=$((($heads/$range)*100))
+headPercent=$(($heads*100/$range))
 	echo "pecentage of heads is: $headPercent"
-tailPercent=$((($tails/$range)*100))
+tailPercent=$(($tails*100/$range))
 	echo "pecentage of tails is: $tailPercent"
 #Calculating count for each and every possibility.
 function Percentage()
@@ -54,7 +54,7 @@ function Percentage()
 	ranges=$1
 	for keyCount in ${!doublet[@]}
 	do
-		doublet[$keyCount]=$(({doublet[$keyCount]}/$ranges*100))
+		doublet[$keyCount]=$((doublet[$keyCount]*100/$ranges))
 		echo "Percentage of $keyCount is: ${doublet[$keyCount]}" 
 	done
 }
